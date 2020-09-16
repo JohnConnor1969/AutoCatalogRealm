@@ -48,6 +48,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bodyYearLabel" destination="xET-mB-3ci" id="Nix-A1-rTd"/>
+                                    <outlet property="brandModelLabel" destination="aAL-vV-TsO" id="R5q-wV-eAj"/>
                                     <segue destination="CSd-V3-8GA" kind="show" id="Bdc-Fc-tZu"/>
                                 </connections>
                             </tableViewCell>

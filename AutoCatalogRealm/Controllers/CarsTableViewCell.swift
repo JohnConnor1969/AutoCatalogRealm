@@ -9,6 +9,13 @@
 import UIKit
 
 class CarsTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet var brandModelLabel: UILabel!
+    @IBOutlet var bodyYearLabel: UILabel!
+    
+    // MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +26,13 @@ class CarsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: - Functions
+    
+    func confugure(car: Car) {
+        brandModelLabel.text = "\(car.brand) \(car.model)"
+        bodyYearLabel.text = "\(car.body) \(car.year)"
     }
 
 }
