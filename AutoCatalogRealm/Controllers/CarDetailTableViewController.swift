@@ -12,9 +12,9 @@ class CarDetailTableViewController: UITableViewController {
     
     // MARK: - Property
     
-    var newCar: Car?
+    var curentCar: Car?
     
-    // MARK: - Oitlets
+    // MARK: - Outlets
     
     @IBOutlet var brandTextField: UITextField!
     @IBOutlet var modelTextField: UITextField!
@@ -28,7 +28,10 @@ class CarDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
         updateSaveButtonState()
+        
 
         // Убираем лишнюю разлиновку ячеек, там где нет контента
         tableView.tableFooterView = UIView()
@@ -53,6 +56,15 @@ class CarDetailTableViewController: UITableViewController {
     
     // MARK: - Functions
     
+    private func setupUI() {
+        if curentCar != nil {
+            brandTextField.text = curentCar?.brand
+            modelTextField.text = curentCar?.model
+            bodyTextField.text = curentCar?.body
+            yearTextField.text = curentCar?.year
+        }
+    }
+    
     private func updateSaveButtonState() {
         let brandText = brandTextField.text ?? ""
         let modelText = modelTextField.text ?? ""
@@ -62,12 +74,21 @@ class CarDetailTableViewController: UITableViewController {
         saveButton.isEnabled = !brandText.isEmpty && !modelText.isEmpty && !bodyText.isEmpty && !yearText.isEmpty
     }
     
-    func saveNewPlace() {
-        newCar = Car(brand: brandTextField.text!,
-                     model: modelTextField.text!,
-                     body: bodyTextField.text!,
-                     year: yearTextField.text!)
-        
+    func saveCar() {
+        let newCar = Car(brand: brandTextField.text!,
+                         model: modelTextField.text!,
+                         body: bodyTextField.text!,
+                         year: yearTextField.text!)
+        if curentCar != nil {
+            try! realm.write {
+                curentCar?.brand = newCar.brand
+                curentCar?.model = newCar.model
+                curentCar?.body = newCar.body
+                curentCar?.year = newCar.year
+            }
+        } else {
+            StorageManager.saveObject(newCar)
+        }
     }
 
 }

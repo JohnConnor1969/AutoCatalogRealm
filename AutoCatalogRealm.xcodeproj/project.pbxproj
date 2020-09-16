@@ -21,6 +21,7 @@
 		97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AE82512219500E8588F /* CarDetailTableViewController.swift */; };
 		97CA8AEB251221D500E8588F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AEA251221D500E8588F /* Default-568h@2x.png */; };
 		97CA8AEE251226CD00E8588F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AED251226CD00E8588F /* Car.swift */; };
+		97CA8AF125125CB600E8588F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF025125CB600E8588F /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		97CA8AE82512219500E8588F /* CarDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailTableViewController.swift; sourceTree = "<group>"; };
 		97CA8AEA251221D500E8588F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		97CA8AED251226CD00E8588F /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		97CA8AF025125CB600E8588F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		97CA8AC425121CF600E8588F /* AutoCatalogRealm */ = {
 			isa = PBXGroup;
 			children = (
+				97CA8AEF25125C9300E8588F /* Managers */,
 				97CA8AEC251226AD00E8588F /* Model */,
 				97CA8AE32512201C00E8588F /* Controllers */,
 				97CA8AE22512201200E8588F /* Storyboards */,
@@ -142,6 +145,14 @@
 				97CA8AED251226CD00E8588F /* Car.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		97CA8AEF25125C9300E8588F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8AF025125CB600E8588F /* StorageManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */,
 				97CA8AC625121CF600E8588F /* AppDelegate.swift in Sources */,
 				97CA8AEE251226CD00E8588F /* Car.swift in Sources */,
+				97CA8AF125125CB600E8588F /* StorageManager.swift in Sources */,
 				97CA8AE52512217100E8588F /* CarsTableViewController.swift in Sources */,
 				97CA8AE72512218100E8588F /* CarsTableViewCell.swift in Sources */,
 				97CA8AC825121CF600E8588F /* SceneDelegate.swift in Sources */,

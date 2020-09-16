@@ -7,24 +7,29 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CarsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var cars = Car.getCars()
+    var cars: Results<Car>!
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        cars = realm.objects(Car.self)
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.title = "Cars"
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cars.count
+        return cars.isEmpty ? 0 : cars.count
     }
 
     
@@ -36,14 +41,37 @@ class CarsTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let car = cars[indexPath.row]
+            
+            // удаляем из таблицы
+            StorageManager.deleteObject(car)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
     // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let car = cars[indexPath.row]
+            let navigationVC = segue.destination as! UINavigationController
+            let carDetalVC = navigationVC.topViewController as! CarDetailTableViewController
+            carDetalVC.curentCar = car
+            
+        }
+    }
 
     @IBAction func  unwindSegue(segue: UIStoryboardSegue) {
         guard let carDetailVC = segue.source as? CarDetailTableViewController else { return }
-        carDetailVC.saveNewPlace()
-        cars.append(carDetailVC.newCar!)
+        carDetailVC.saveCar()
         tableView.reloadData()
     }
 
