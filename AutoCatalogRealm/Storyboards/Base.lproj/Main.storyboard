@@ -50,7 +50,7 @@
                                 <connections>
                                     <outlet property="bodyYearLabel" destination="xET-mB-3ci" id="Nix-A1-rTd"/>
                                     <outlet property="brandModelLabel" destination="aAL-vV-TsO" id="R5q-wV-eAj"/>
-                                    <segue destination="CSd-V3-8GA" kind="show" id="Bdc-Fc-tZu"/>
+                                    <segue destination="CSd-V3-8GA" kind="show" identifier="editSegue" id="Bdc-Fc-tZu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +62,7 @@
                     <navigationItem key="navigationItem" id="6en-sl-O7C">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3vo-K3-oN5">
                             <connections>
-                                <segue destination="CSd-V3-8GA" kind="show" id="7MU-3y-9cA"/>
+                                <segue destination="CSd-V3-8GA" kind="show" identifier="addSegue" id="7MU-3y-9cA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,30 +75,122 @@
         <scene sceneID="fbC-wB-d6f">
             <objects>
                 <tableViewController id="3Bv-hD-1wX" customClass="CarDetailTableViewController" customModule="AutoCatalogRealm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hys-TQ-1TZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hys-TQ-1TZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection headerTitle="Brand" id="DZP-Pz-DLq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gg8-3V-vYR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Gg8-3V-vYR">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gg8-3V-vYR" id="NQ4-N3-BSW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-Q4-cqk">
-                                                    <rect key="frame" x="20" y="16.5" width="374" height="23.5"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-Q4-cqk">
+                                                    <rect key="frame" x="20" y="4" width="374" height="36"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="textChanged:" destination="3Bv-hD-1wX" eventType="editingChanged" id="whc-3d-uS8"/>
+                                                        <outlet property="delegate" destination="3Bv-hD-1wX" id="MG8-Nn-tyB"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="jcy-Q4-cqk" firstAttribute="top" secondItem="NQ4-N3-BSW" secondAttribute="top" constant="4" id="PbF-1S-12U"/>
                                                 <constraint firstAttribute="trailing" secondItem="jcy-Q4-cqk" secondAttribute="trailing" constant="20" id="d2K-A7-YYj"/>
                                                 <constraint firstAttribute="bottom" secondItem="jcy-Q4-cqk" secondAttribute="bottom" constant="4" id="fAn-Xm-ko4"/>
                                                 <constraint firstItem="jcy-Q4-cqk" firstAttribute="leading" secondItem="NQ4-N3-BSW" secondAttribute="leading" constant="20" id="nIO-qz-rkp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Model" id="CYT-eq-zMv">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Zuf-qA-JyH">
+                                        <rect key="frame" x="0.0" y="127.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zuf-qA-JyH" id="Q0e-kP-42M">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gR0-Jf-wOh">
+                                                    <rect key="frame" x="20" y="4" width="374" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="textChanged:" destination="3Bv-hD-1wX" eventType="editingChanged" id="v5c-kW-EQL"/>
+                                                        <outlet property="delegate" destination="3Bv-hD-1wX" id="CBx-pZ-wYP"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gR0-Jf-wOh" secondAttribute="trailing" constant="20" id="1GY-CI-lC2"/>
+                                                <constraint firstItem="gR0-Jf-wOh" firstAttribute="leading" secondItem="Q0e-kP-42M" secondAttribute="leading" constant="20" id="SSF-2H-n4b"/>
+                                                <constraint firstItem="gR0-Jf-wOh" firstAttribute="top" secondItem="Q0e-kP-42M" secondAttribute="top" constant="4" id="TB6-m2-oq8"/>
+                                                <constraint firstAttribute="bottom" secondItem="gR0-Jf-wOh" secondAttribute="bottom" constant="4" id="X7F-8H-CLU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Body" id="uoH-CN-0Yj">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ecd-hz-I0F">
+                                        <rect key="frame" x="0.0" y="227" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ecd-hz-I0F" id="h7a-ar-Ufa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Body type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-UH-2xR">
+                                                    <rect key="frame" x="20" y="4" width="374" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="textChanged:" destination="3Bv-hD-1wX" eventType="editingChanged" id="EOm-oi-SaK"/>
+                                                        <outlet property="delegate" destination="3Bv-hD-1wX" id="a1u-eQ-4fd"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Maf-UH-2xR" secondAttribute="trailing" constant="20" id="3HY-9C-PDl"/>
+                                                <constraint firstItem="Maf-UH-2xR" firstAttribute="top" secondItem="h7a-ar-Ufa" secondAttribute="top" constant="4" id="h6w-Qr-Vfh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Maf-UH-2xR" secondAttribute="bottom" constant="4" id="pYS-Zj-uqi"/>
+                                                <constraint firstItem="Maf-UH-2xR" firstAttribute="leading" secondItem="h7a-ar-Ufa" secondAttribute="leading" constant="20" id="s7F-23-m8p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Year" id="EUo-q7-txt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Cqr-tj-fnF">
+                                        <rect key="frame" x="0.0" y="326.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cqr-tj-fnF" id="nxS-Zh-DX8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year of manufacture" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVN-3a-x3F">
+                                                    <rect key="frame" x="20" y="4" width="374" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="textChanged:" destination="3Bv-hD-1wX" eventType="editingChanged" id="RAi-4m-oq7"/>
+                                                        <outlet property="delegate" destination="3Bv-hD-1wX" id="Msg-VW-2GN"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="eVN-3a-x3F" secondAttribute="bottom" constant="4" id="0Y0-IP-6t1"/>
+                                                <constraint firstAttribute="trailing" secondItem="eVN-3a-x3F" secondAttribute="trailing" constant="20" id="Bmb-xg-lUN"/>
+                                                <constraint firstItem="eVN-3a-x3F" firstAttribute="leading" secondItem="nxS-Zh-DX8" secondAttribute="leading" constant="20" id="kAe-Xg-N2j"/>
+                                                <constraint firstItem="eVN-3a-x3F" firstAttribute="top" secondItem="nxS-Zh-DX8" secondAttribute="top" constant="4" id="l1d-j5-1tB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -111,11 +203,27 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ARA-yz-5hu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lE8-NG-DSK"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wmv-JU-JTV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lE8-NG-DSK">
+                            <connections>
+                                <action selector="cancelAction:" destination="3Bv-hD-1wX" id="9N9-oA-Eo0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wmv-JU-JTV">
+                            <connections>
+                                <segue destination="H20-EL-jW3" kind="unwind" unwindAction="unwindSegueWithSegue:" id="rPA-sB-3B5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextField" destination="Maf-UH-2xR" id="yyA-ew-sCf"/>
+                        <outlet property="brandTextField" destination="jcy-Q4-cqk" id="Fom-ZV-YnA"/>
+                        <outlet property="modelTextField" destination="gR0-Jf-wOh" id="bgI-Fq-uMi"/>
+                        <outlet property="saveButton" destination="Wmv-JU-JTV" id="q6E-JB-XRB"/>
+                        <outlet property="yearTextField" destination="eVN-3a-x3F" id="pQl-Po-c7v"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tO8-q6-pJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="H20-EL-jW3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2475" y="189"/>
         </scene>

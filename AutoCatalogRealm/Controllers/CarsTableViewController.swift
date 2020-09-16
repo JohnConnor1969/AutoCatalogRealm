@@ -12,7 +12,7 @@ class CarsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    let cars = Car.getCars()
+    var cars = Car.getCars()
     
     // MARK: - Lifecycle
 
@@ -37,14 +37,14 @@ class CarsTableViewController: UITableViewController {
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func  unwindSegue(segue: UIStoryboardSegue) {
+        guard let carDetailVC = segue.source as? CarDetailTableViewController else { return }
+        carDetailVC.saveNewPlace()
+        cars.append(carDetailVC.newCar!)
+        tableView.reloadData()
     }
-    */
 
 }

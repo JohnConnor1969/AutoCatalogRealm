@@ -9,82 +9,78 @@
 import UIKit
 
 class CarDetailTableViewController: UITableViewController {
+    
+    // MARK: - Property
+    
+    var newCar: Car?
+    
+    // MARK: - Oitlets
+    
+    @IBOutlet var brandTextField: UITextField!
+    @IBOutlet var modelTextField: UITextField!
+    @IBOutlet var bodyTextField: UITextField!
+    @IBOutlet var yearTextField: UITextField!
+    
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateSaveButtonState()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Убираем лишнюю разлиновку ячеек, там где нет контента
+        tableView.tableFooterView = UIView()
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view delegate
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    // MARK: - Actions
+
+    @IBAction func textChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Functions
+    
+    private func updateSaveButtonState() {
+        let brandText = brandTextField.text ?? ""
+        let modelText = modelTextField.text ?? ""
+        let bodyText = bodyTextField.text ?? ""
+        let yearText = yearTextField.text ?? ""
+        
+        saveButton.isEnabled = !brandText.isEmpty && !modelText.isEmpty && !bodyText.isEmpty && !yearText.isEmpty
+    }
+    
+    func saveNewPlace() {
+        newCar = Car(brand: brandTextField.text!,
+                     model: modelTextField.text!,
+                     body: bodyTextField.text!,
+                     year: yearTextField.text!)
+        
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+}
 
-        // Configure the cell...
+// MARK: - Text field delegaete
 
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+extension CarDetailTableViewController: UITextFieldDelegate {
+    
+    // Hide keyboard to return key tap
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
