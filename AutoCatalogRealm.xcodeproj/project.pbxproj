@@ -13,7 +13,26 @@
 		97CA8ACD25121CF600E8588F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8ACB25121CF600E8588F /* Main.storyboard */; };
 		97CA8ACF25121CFE00E8588F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8ACE25121CFE00E8588F /* Assets.xcassets */; };
 		97CA8AD225121CFE00E8588F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AD025121CFE00E8588F /* LaunchScreen.storyboard */; };
+		97CA8ADB25121D9300E8588F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADA25121D9300E8588F /* RealmSwift.framework */; };
+		97CA8ADC25121D9300E8588F /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADA25121D9300E8588F /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97CA8ADF25121D9700E8588F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADE25121D9600E8588F /* Realm.framework */; };
+		97CA8AE025121D9700E8588F /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADE25121D9600E8588F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		97CA8ADD25121D9400E8588F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				97CA8AE025121D9700E8588F /* Realm.framework in Embed Frameworks */,
+				97CA8ADC25121D9300E8588F /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		97CA8AC225121CF600E8588F /* AutoCatalogRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCatalogRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,8 @@
 		97CA8ACE25121CFE00E8588F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97CA8AD125121CFE00E8588F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97CA8AD325121CFE00E8588F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97CA8ADA25121D9300E8588F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		97CA8ADE25121D9600E8588F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CA8ADF25121D9700E8588F /* Realm.framework in Frameworks */,
+				97CA8ADB25121D9300E8588F /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,7 @@
 			children = (
 				97CA8AC425121CF600E8588F /* AutoCatalogRealm */,
 				97CA8AC325121CF600E8588F /* Products */,
+				97CA8AD925121D9300E8588F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +91,15 @@
 			path = AutoCatalogRealm;
 			sourceTree = "<group>";
 		};
+		97CA8AD925121D9300E8588F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8ADE25121D9600E8588F /* Realm.framework */,
+				97CA8ADA25121D9300E8588F /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +110,7 @@
 				97CA8ABE25121CF600E8588F /* Sources */,
 				97CA8ABF25121CF600E8588F /* Frameworks */,
 				97CA8AC025121CF600E8588F /* Resources */,
+				97CA8ADD25121D9400E8588F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +320,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AutoCatalogRealm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +342,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AutoCatalogRealm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
