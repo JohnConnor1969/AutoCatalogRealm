@@ -24,7 +24,7 @@ class CarDetailTableViewController: UITableViewController {
     @IBOutlet var saveButton: UIBarButtonItem!
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,19 +32,19 @@ class CarDetailTableViewController: UITableViewController {
         
         updateSaveButtonState()
         
-
-        // Убираем лишнюю разлиновку ячеек, там где нет контента
+        addDoneButton(yearTextField)
+        
         tableView.tableFooterView = UIView()
     }
-
+    
     // MARK: - Table view delegate
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
     }
-
+    
     // MARK: - Actions
-
+    
     @IBAction func textChanged(_ sender: UITextField) {
         updateSaveButtonState()
     }
@@ -90,18 +90,51 @@ class CarDetailTableViewController: UITableViewController {
             StorageManager.saveObject(newCar)
         }
     }
-
 }
 
 // MARK: - Text field delegaete
 
 extension CarDetailTableViewController: UITextFieldDelegate {
     
-    // Hide keyboard to return key tap
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        switch textField {
+        case brandTextField:
+            textField.resignFirstResponder()
+            modelTextField.becomeFirstResponder()
+        case modelTextField:
+            textField.resignFirstResponder()
+            bodyTextField.becomeFirstResponder()
+        case bodyTextField:
+            textField.resignFirstResponder()
+            yearTextField.becomeFirstResponder()
+        case yearTextField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        
         return true
     }
     
+    func addDoneButton(_ textField: UITextField) {
+        let keyboardToolBar = UIToolbar()
+        textField.inputAccessoryView = keyboardToolBar
+        keyboardToolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(didTapDone))
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+        
+        keyboardToolBar.items = [flexBarButton, doneButton]
+        
+    }
     
+    @objc private func didTapDone() {
+        view.endEditing(true)
+    }
 }
