@@ -22,6 +22,8 @@
 		97CA8AEB251221D500E8588F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AEA251221D500E8588F /* Default-568h@2x.png */; };
 		97CA8AEE251226CD00E8588F /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AED251226CD00E8588F /* Car.swift */; };
 		97CA8AF125125CB600E8588F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF025125CB600E8588F /* StorageManager.swift */; };
+		97CA8AF325127EB500E8588F /* FirstLaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */; };
+		97CA8AF52512809D00E8588F /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AF42512809D00E8588F /* Data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +57,8 @@
 		97CA8AEA251221D500E8588F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		97CA8AED251226CD00E8588F /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		97CA8AF025125CB600E8588F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchManager.swift; sourceTree = "<group>"; };
+		97CA8AF42512809D00E8588F /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				97CA8ACE25121CFE00E8588F /* Assets.xcassets */,
 				97CA8AD325121CFE00E8588F /* Info.plist */,
 				97CA8AEA251221D500E8588F /* Default-568h@2x.png */,
+				97CA8AF42512809D00E8588F /* Data.plist */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				97CA8AF025125CB600E8588F /* StorageManager.swift */,
+				97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97CA8AD225121CFE00E8588F /* LaunchScreen.storyboard in Resources */,
+				97CA8AF52512809D00E8588F /* Data.plist in Resources */,
 				97CA8AEB251221D500E8588F /* Default-568h@2x.png in Resources */,
 				97CA8ACF25121CFE00E8588F /* Assets.xcassets in Resources */,
 				97CA8ACD25121CF600E8588F /* Main.storyboard in Resources */,
@@ -229,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */,
+				97CA8AF325127EB500E8588F /* FirstLaunchManager.swift in Sources */,
 				97CA8AC625121CF600E8588F /* AppDelegate.swift in Sources */,
 				97CA8AEE251226CD00E8588F /* Car.swift in Sources */,
 				97CA8AF125125CB600E8588F /* StorageManager.swift in Sources */,
