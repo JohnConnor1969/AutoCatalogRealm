@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		97CA8AC625121CF600E8588F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AC525121CF600E8588F /* AppDelegate.swift */; };
 		97CA8AC825121CF600E8588F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AC725121CF600E8588F /* SceneDelegate.swift */; };
-		97CA8ACA25121CF600E8588F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AC925121CF600E8588F /* ViewController.swift */; };
 		97CA8ACD25121CF600E8588F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8ACB25121CF600E8588F /* Main.storyboard */; };
 		97CA8ACF25121CFE00E8588F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8ACE25121CFE00E8588F /* Assets.xcassets */; };
 		97CA8AD225121CFE00E8588F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AD025121CFE00E8588F /* LaunchScreen.storyboard */; };
@@ -17,6 +16,10 @@
 		97CA8ADC25121D9300E8588F /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADA25121D9300E8588F /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97CA8ADF25121D9700E8588F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADE25121D9600E8588F /* Realm.framework */; };
 		97CA8AE025121D9700E8588F /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97CA8ADE25121D9600E8588F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97CA8AE52512217100E8588F /* CarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AE42512217100E8588F /* CarsTableViewController.swift */; };
+		97CA8AE72512218100E8588F /* CarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AE62512218100E8588F /* CarsTableViewCell.swift */; };
+		97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AE82512219500E8588F /* CarDetailTableViewController.swift */; };
+		97CA8AEB251221D500E8588F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AEA251221D500E8588F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,13 +41,16 @@
 		97CA8AC225121CF600E8588F /* AutoCatalogRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCatalogRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CA8AC525121CF600E8588F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CA8AC725121CF600E8588F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97CA8AC925121CF600E8588F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97CA8ACC25121CF600E8588F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97CA8ACE25121CFE00E8588F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97CA8AD125121CFE00E8588F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97CA8AD325121CFE00E8588F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97CA8ADA25121D9300E8588F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		97CA8ADE25121D9600E8588F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		97CA8AE42512217100E8588F /* CarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewController.swift; sourceTree = "<group>"; };
+		97CA8AE62512218100E8588F /* CarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewCell.swift; sourceTree = "<group>"; };
+		97CA8AE82512219500E8588F /* CarDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailTableViewController.swift; sourceTree = "<group>"; };
+		97CA8AEA251221D500E8588F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		97CA8AB925121CF600E8588F = {
 			isa = PBXGroup;
 			children = (
+				97CA8AEA251221D500E8588F /* Default-568h@2x.png */,
 				97CA8AC425121CF600E8588F /* AutoCatalogRealm */,
 				97CA8AC325121CF600E8588F /* Products */,
 				97CA8AD925121D9300E8588F /* Frameworks */,
@@ -80,13 +87,9 @@
 		97CA8AC425121CF600E8588F /* AutoCatalogRealm */ = {
 			isa = PBXGroup;
 			children = (
-				97CA8AC525121CF600E8588F /* AppDelegate.swift */,
-				97CA8AC725121CF600E8588F /* SceneDelegate.swift */,
-				97CA8AC925121CF600E8588F /* ViewController.swift */,
-				97CA8ACB25121CF600E8588F /* Main.storyboard */,
-				97CA8ACE25121CFE00E8588F /* Assets.xcassets */,
-				97CA8AD025121CFE00E8588F /* LaunchScreen.storyboard */,
-				97CA8AD325121CFE00E8588F /* Info.plist */,
+				97CA8AE32512201C00E8588F /* Controllers */,
+				97CA8AE22512201200E8588F /* Storyboards */,
+				97CA8AE125121FF200E8588F /* Supporting */,
 			);
 			path = AutoCatalogRealm;
 			sourceTree = "<group>";
@@ -98,6 +101,36 @@
 				97CA8ADA25121D9300E8588F /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97CA8AE125121FF200E8588F /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8AC525121CF600E8588F /* AppDelegate.swift */,
+				97CA8AC725121CF600E8588F /* SceneDelegate.swift */,
+				97CA8ACE25121CFE00E8588F /* Assets.xcassets */,
+				97CA8AD325121CFE00E8588F /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		97CA8AE22512201200E8588F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8ACB25121CF600E8588F /* Main.storyboard */,
+				97CA8AD025121CFE00E8588F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		97CA8AE32512201C00E8588F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8AE42512217100E8588F /* CarsTableViewController.swift */,
+				97CA8AE62512218100E8588F /* CarsTableViewCell.swift */,
+				97CA8AE82512219500E8588F /* CarDetailTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97CA8AD225121CFE00E8588F /* LaunchScreen.storyboard in Resources */,
+				97CA8AEB251221D500E8588F /* Default-568h@2x.png in Resources */,
 				97CA8ACF25121CFE00E8588F /* Assets.xcassets in Resources */,
 				97CA8ACD25121CF600E8588F /* Main.storyboard in Resources */,
 			);
@@ -172,8 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97CA8ACA25121CF600E8588F /* ViewController.swift in Sources */,
+				97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */,
 				97CA8AC625121CF600E8588F /* AppDelegate.swift in Sources */,
+				97CA8AE52512217100E8588F /* CarsTableViewController.swift in Sources */,
+				97CA8AE72512218100E8588F /* CarsTableViewCell.swift in Sources */,
 				97CA8AC825121CF600E8588F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +360,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = AutoCatalogRealm/Info.plist;
+				INFOPLIST_FILE = AutoCatalogRealm/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +382,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = AutoCatalogRealm/Info.plist;
+				INFOPLIST_FILE = AutoCatalogRealm/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
