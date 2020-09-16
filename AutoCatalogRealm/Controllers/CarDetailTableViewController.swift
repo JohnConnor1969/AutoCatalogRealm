@@ -13,7 +13,9 @@ class CarDetailTableViewController: UITableViewController {
     // MARK: - Property
     
     var curentCar: Car?
+    var yearInterval: [String] = []
     
+
     // MARK: - Outlets
     
     @IBOutlet var brandTextField: UITextField!
@@ -32,7 +34,9 @@ class CarDetailTableViewController: UITableViewController {
         
         updateSaveButtonState()
         
-        addDoneButton(yearTextField)
+        choiceInterval(yearTextField)
+        addToolBar(yearTextField)
+        //addDoneButton(yearTextField)
         
         tableView.tableFooterView = UIView()
     }
@@ -65,7 +69,7 @@ class CarDetailTableViewController: UITableViewController {
         }
     }
     
-    private func updateSaveButtonState() {
+    func updateSaveButtonState() {
         let brandText = brandTextField.text ?? ""
         let modelText = modelTextField.text ?? ""
         let bodyText = bodyTextField.text ?? ""
@@ -94,47 +98,9 @@ class CarDetailTableViewController: UITableViewController {
 
 // MARK: - Text field delegaete
 
-extension CarDetailTableViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case brandTextField:
-            textField.resignFirstResponder()
-            modelTextField.becomeFirstResponder()
-        case modelTextField:
-            textField.resignFirstResponder()
-            bodyTextField.becomeFirstResponder()
-        case bodyTextField:
-            textField.resignFirstResponder()
-            yearTextField.becomeFirstResponder()
-        case yearTextField:
-            view.endEditing(true)
-        default:
-            break
-        }
-        
-        return true
-    }
-    
-    func addDoneButton(_ textField: UITextField) {
-        let keyboardToolBar = UIToolbar()
-        textField.inputAccessoryView = keyboardToolBar
-        keyboardToolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done",
-                                         style: .done,
-                                         target: self,
-                                         action: #selector(didTapDone))
-        
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                            target: nil,
-                                            action: nil)
-        
-        keyboardToolBar.items = [flexBarButton, doneButton]
-        
-    }
-    
-    @objc private func didTapDone() {
-        view.endEditing(true)
-    }
-}
+
+
+// MARK: - DatePicker
+
+
+

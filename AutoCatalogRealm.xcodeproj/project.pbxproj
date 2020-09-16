@@ -23,6 +23,8 @@
 		97CA8AF125125CB600E8588F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF025125CB600E8588F /* StorageManager.swift */; };
 		97CA8AF325127EB500E8588F /* FirstLaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */; };
 		97CA8AF52512809D00E8588F /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97CA8AF42512809D00E8588F /* Data.plist */; };
+		97CA8AF825129E9000E8588F /* CarDetail+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF725129E8F00E8588F /* CarDetail+Picker.swift */; };
+		97CA8AFA25129ECF00E8588F /* Cardetail+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA8AF925129ECE00E8588F /* Cardetail+TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +59,8 @@
 		97CA8AF025125CB600E8588F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchManager.swift; sourceTree = "<group>"; };
 		97CA8AF42512809D00E8588F /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		97CA8AF725129E8F00E8588F /* CarDetail+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarDetail+Picker.swift"; sourceTree = "<group>"; };
+		97CA8AF925129ECE00E8588F /* Cardetail+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cardetail+TextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				97CA8AEF25125C9300E8588F /* Managers */,
 				97CA8AEC251226AD00E8588F /* Model */,
 				97CA8AE32512201C00E8588F /* Controllers */,
+				97CA8AF625129E6700E8588F /* Extensions */,
 				97CA8AE22512201200E8588F /* Storyboards */,
 				97CA8AE125121FF200E8588F /* Supporting */,
 			);
@@ -152,10 +157,19 @@
 		97CA8AEF25125C9300E8588F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				97CA8AF025125CB600E8588F /* StorageManager.swift */,
 				97CA8AF225127EB500E8588F /* FirstLaunchManager.swift */,
+				97CA8AF025125CB600E8588F /* StorageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		97CA8AF625129E6700E8588F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97CA8AF725129E8F00E8588F /* CarDetail+Picker.swift */,
+				97CA8AF925129ECE00E8588F /* Cardetail+TextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CA8AF825129E9000E8588F /* CarDetail+Picker.swift in Sources */,
 				97CA8AE92512219500E8588F /* CarDetailTableViewController.swift in Sources */,
 				97CA8AF325127EB500E8588F /* FirstLaunchManager.swift in Sources */,
 				97CA8AC625121CF600E8588F /* AppDelegate.swift in Sources */,
@@ -239,6 +254,7 @@
 				97CA8AE52512217100E8588F /* CarsTableViewController.swift in Sources */,
 				97CA8AE72512218100E8588F /* CarsTableViewCell.swift in Sources */,
 				97CA8AC825121CF600E8588F /* SceneDelegate.swift in Sources */,
+				97CA8AFA25129ECF00E8588F /* Cardetail+TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

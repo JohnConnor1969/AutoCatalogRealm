@@ -49,8 +49,6 @@ class CarsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let car = cars[indexPath.row]
-            
-            // удаляем из таблицы
             StorageManager.deleteObject(car)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -74,5 +72,4 @@ class CarsTableViewController: UITableViewController {
         carDetailVC.saveCar()
         tableView.reloadData()
     }
-
 }

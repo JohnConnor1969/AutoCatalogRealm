@@ -23,6 +23,5 @@ class StorageManager {
             realm.delete(car)
         }
     }
- 
 }
 

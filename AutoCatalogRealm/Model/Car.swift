@@ -22,30 +22,4 @@ class Car: Object {
         self.body = body
         self.year = year
     }
-    
-    /*
-    func saveCars() {
-        
-        let newCar1 = Car()
-        newCar1.brand = "Kia"
-        newCar1.model = "Rio"
-        newCar1.body = "Sedan"
-        newCar1.year = "2015"
-        StorageManager.saveObject(newCar1)
-        
-        let newCar2 = Car()
-        newCar2.brand = "Toyota"
-        newCar2.model = "Avensis"
-        newCar2.body = "Sedan"
-        newCar2.year = "2007"
-        StorageManager.saveObject(newCar2)
-
-        let newCar3 = Car()
-        newCar3.brand = "Hyundai"
-        newCar3.model = "Santa Fe"
-        newCar3.body = "SUV"
-        newCar3.year = "2010"
-        StorageManager.saveObject(newCar3)
-    }
- */
 }
