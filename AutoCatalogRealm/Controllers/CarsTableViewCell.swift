@@ -15,24 +15,10 @@ class CarsTableViewCell: UITableViewCell {
     @IBOutlet var brandModelLabel: UILabel!
     @IBOutlet var bodyYearLabel: UILabel!
     
-    // MARK: - Lifecycle
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     // MARK: - Functions
     
     func confugure(car: Car) {
         brandModelLabel.text = "\(car.brand) \(car.model)"
         bodyYearLabel.text = "\(car.body) \(car.year)"
     }
-
 }

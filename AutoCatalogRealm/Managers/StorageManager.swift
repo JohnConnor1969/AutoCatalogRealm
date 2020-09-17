@@ -11,7 +11,6 @@ import RealmSwift
 let realm = try! Realm()
 
 class StorageManager {
-    
     static func saveObject(_ car: Car) {
         try! realm.write {
             realm.add(car)

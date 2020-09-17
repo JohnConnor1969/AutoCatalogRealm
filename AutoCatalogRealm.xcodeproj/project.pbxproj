@@ -96,11 +96,11 @@
 		97CA8AC425121CF600E8588F /* AutoCatalogRealm */ = {
 			isa = PBXGroup;
 			children = (
-				97CA8AEF25125C9300E8588F /* Managers */,
 				97CA8AEC251226AD00E8588F /* Model */,
 				97CA8AE32512201C00E8588F /* Controllers */,
 				97CA8AF625129E6700E8588F /* Extensions */,
 				97CA8AE22512201200E8588F /* Storyboards */,
+				97CA8AEF25125C9300E8588F /* Managers */,
 				97CA8AE125121FF200E8588F /* Supporting */,
 			);
 			path = AutoCatalogRealm;

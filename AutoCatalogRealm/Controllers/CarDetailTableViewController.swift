@@ -14,7 +14,6 @@ class CarDetailTableViewController: UITableViewController {
     
     var curentCar: Car?
     var yearInterval: [String] = []
-    
 
     // MARK: - Outlets
     
@@ -31,14 +30,6 @@ class CarDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setupUI()
-        
-        updateSaveButtonState()
-        
-        choiceInterval(yearTextField)
-        addToolBar(yearTextField)
-        //addDoneButton(yearTextField)
-        
-        tableView.tableFooterView = UIView()
     }
     
     // MARK: - Table view delegate
@@ -53,20 +44,33 @@ class CarDetailTableViewController: UITableViewController {
         updateSaveButtonState()
     }
     
+    @IBAction func yearTextChanged(_ sender: UITextField) {
+        if let text = yearTextField.text?.dropLast() {
+            yearTextField.text = String(text)
+        }
+        
+        updateSaveButtonState()
+    }
+    
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK: - Functions
     
     private func setupUI() {
+        updateSaveButtonState()
+        
+        addPicker(yearTextField)
+        
         if curentCar != nil {
             brandTextField.text = curentCar?.brand
             modelTextField.text = curentCar?.model
             bodyTextField.text = curentCar?.body
             yearTextField.text = curentCar?.year
         }
+        
+        tableView.tableFooterView = UIView()
     }
     
     func updateSaveButtonState() {
@@ -95,12 +99,3 @@ class CarDetailTableViewController: UITableViewController {
         }
     }
 }
-
-// MARK: - Text field delegaete
-
-
-
-// MARK: - DatePicker
-
-
-

@@ -22,8 +22,7 @@ class CarsTableViewController: UITableViewController {
         
         cars = realm.objects(Car.self)
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.title = "Cars"
+        setupUI()
     }
 
     // MARK: - Table view data source
@@ -31,7 +30,6 @@ class CarsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cars.isEmpty ? 0 : cars.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CarsTableViewCell
@@ -63,13 +61,19 @@ class CarsTableViewController: UITableViewController {
             let navigationVC = segue.destination as! UINavigationController
             let carDetalVC = navigationVC.topViewController as! CarDetailTableViewController
             carDetalVC.curentCar = car
-            
         }
     }
 
-    @IBAction func  unwindSegue(segue: UIStoryboardSegue) {
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         guard let carDetailVC = segue.source as? CarDetailTableViewController else { return }
         carDetailVC.saveCar()
         tableView.reloadData()
+    }
+    
+    // MARK: - Functions
+    
+    private func setupUI() {
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.title = "Cars"
     }
 }

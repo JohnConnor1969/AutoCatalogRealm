@@ -9,7 +9,6 @@
 import Foundation
 
 class FirstLaunchManager {
-    
     static let shared = FirstLaunchManager()
     
     var firstLaunch: Bool!
@@ -26,9 +25,8 @@ class FirstLaunchManager {
         }
     }
     
-    func put3cars() {
+    private func put3cars() {
         guard let pathTofile = Bundle.main.path(forResource: "Data", ofType: "plist") else { return }
-        print(pathTofile)
         guard let dataArray = NSArray(contentsOfFile: pathTofile) else { return }
         
         for dictionary in dataArray {
